@@ -45,6 +45,19 @@ var getJSONData = function (url) {
 //elementos HTML presentes.
 
 document.addEventListener("DOMContentLoaded", function (e) {
-  document.getElementById('nombreUsuario').innerHTML = "Bienvenido a E-commerce " + localStorage.getItem('logUsuario') + "!"
+  document.getElementById('nombreUsuario').innerHTML = "Bienvenido a E-commerce " + localStorage.getItem('logUsuario') + "!";
+
+  document.getElementById("cerrar").addEventListener("click", function () {
+    window.location.href = "pagprincipal.html";
+    localStorage.clear();
+  });
+
+  //auxiliares para form de comentarios
+  document.getElementById("usercoment").value = localStorage.getItem(
+    "logUsuario"
+  );
+  document.getElementById("usercoment").innerHTML = localStorage.getItem(
+    "logUsuario"
+  );
 
 });
